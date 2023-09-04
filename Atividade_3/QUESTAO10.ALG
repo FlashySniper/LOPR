@@ -2,7 +2,7 @@ Algoritmo "questao10"
 
 Var
    // Seção de Declarações das variáveis
-   celsius, fahrenheit, conversao : real
+   celsius, fahrenheit : real
 
 Inicio
    // Seção de Comandos, procedimento, funções, operadores, etc...
