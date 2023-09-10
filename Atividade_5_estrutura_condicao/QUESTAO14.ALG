@@ -1,35 +1,44 @@
 Algoritmo "questao14"
 
 Var
-   litros : inteiro
-   combustivel : caractere
-   valor : real
+tipoCombustivel: caractere
+quantLitros: real
+precoGasolina: real
+precoDesconto: real
+precoAlcool: real
+precoLitro: real
+valorFinal: real
 
 Inicio
-   escreva("Escolha A para álcool ou G para gasolina: ")
-   leia(combustivel)
-   escreva("Digite a quantidade de litros vendidos: ")
-   leia(litros)
-   se (combustivel = "A") ou (combustivel = "a") entao
-      se litros <= 20 entao
-         valor <- litros - (litros * 0.03)
-         escreva("O valor a ser pago será de R$ ", valor)
-      senao
-         valor <- litros - (litros * 0.05)
-         escreva("O valor a ser pago será de R$ ", valor)
-      fimse
-   senao
-      se (combustivel = "G") ou (combustivel = "g") entao
-         se litros <= 20 entao
-            valor <- litros - (litros * 0.04)
-            escreva("O valor a ser pago será de R$ ", valor)
-         senao
-            valor <- litros - (litros * 0.06)
-            escreva("O valor a ser pago será de R$ ", valor)
-         fimse
-      fimse
-   fimse
+escreva("Escolha A para álcool ou G para gasolina: ")
+leia(tipoCombustivel)
+escreva("Digite a quantidade de litros: ")
+leia(quantLitros)
 
+precoAlcool <- 2.90
+precoGasolina <- 3.3
+
+se (tipoCombustivel = "A") ou (tipoCombustivel = "a") entao
+    se quantLitros <= 20 entao
+        precoDesconto <- precoAlcool - (precoAlcool * 0.03)
+        valorFinal <- quantLitros * precoDesconto
+        escreval("O valor a ser pago será de R$ ", valorFinal:2:2)
+    senao
+        precoDesconto <- precoAlcool - (precoAlcool * 0.05)
+        valorFinal <- quantLitros * precoDesconto
+        escreval("O valor a ser pago será de R$ ", valorFinal:2:2)
+    fimse
+senao
+se quantLitros <= 20 entao
+        precoDesconto <- precoGasolina - (precoGasolina * 0.04)
+        valorFinal <- quantLitros * precoDesconto
+        escreval("O valor a ser pago será de R$ ", valorFinal:2:2)
+    senao
+        precoDesconto <- precoGasolina - (precoGasolina * 0.06)
+        valorFinal <- quantLitros * precoDesconto
+        escreval("O valor a ser pago será de R$ ", valorFinal:2:2)
+    fimse
+fimse
 
 
 Fimalgoritmo
