@@ -14,13 +14,13 @@ Inicio
       escreval("Peso da pessoa (kg)" , i, ":")
       leia(peso)
       se idade > 50 entao
-         idadeB <- idade+1
+         idadeB <- idadeB+1
       fimse
       se altura > 1.60 entao
-         alturaB <- altura+1
+         alturaB <- alturaB+1
       fimse
       se peso < 80 entao
-         pesoB <- peso+1
+         pesoB <- pesoB+1
       fimse
    fimpara
    escreval(idadeB , " tem idade acima de 50 anos")
