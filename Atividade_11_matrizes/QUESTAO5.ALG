@@ -37,8 +37,5 @@ Inicio
    escreval("      * Fevereiro:", somaB, ";")
    escreval("      * Março:", somaC, ";")
    escreva("Total vendido em todas as primeiras semanas de cada mês:", totalVendasPrimeiraSemana)
-
-
-
-
+   
 Fimalgoritmo
