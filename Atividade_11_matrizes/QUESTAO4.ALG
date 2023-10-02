@@ -41,5 +41,9 @@ Inicio
          fimse
       fimpara
    fimpara
+   // ou
+   //para i de 1 ate 4 faca
+   //     escreva(matriz[i,i], "")
+   //fimpara
 
 Fimalgoritmo
