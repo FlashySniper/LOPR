@@ -7,17 +7,17 @@ Algoritmo "questao2"
 Var
    n: inteiro
    vetA, vetB : vetor[1..30] de inteiro
-funcao comparaVetores(): logico
+funcao compararVetores(n: inteiro): logico
 var
    i: inteiro
    igualdade : logico
 inicio
    igualdade <- verdadeiro
    para i de 1 ate n faca
-      vetA[i] <- randi(50)
+      vetA[i] <- randi(30)
    fimpara
    para i de 1 ate n faca
-      vetB[i] <- randi(50)
+      vetB[i] <- randi(30)
    fimpara
    para i de 1 ate n faca
         se (vetA[i] <> vetB[i]) entao
@@ -25,15 +25,16 @@ inicio
            interrompa
         fimse
    fimpara
+   retorne igualdade
 fimfuncao
 
 Inicio
    escreva("Escolha o tamanho do vetor: ")
    leia(n)
-   se comparaVetores() entao
-      escreva("Os vetores são diferentes!")
+   se compararVetores(n) entao
+      escreva("Os vetores são iguais!")
    senao
-        escreva("Os vetores são iguais!")
+        escreva("Os vetores são diferentes!")
    fimse
 
 Fimalgoritmo
