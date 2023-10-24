@@ -66,8 +66,8 @@ inicio
          escreval(filmes[i].classificacaoIndicativaFilme)
          escreva("Ano de lançamento: ")
          escreval(filmes[i].anoLancamentoFilme)
+         escreval("---------------------------")
       fimse
-      escreval("---------------------------")
    fimpara
 fimprocedimento
 
@@ -90,8 +90,8 @@ inicio
          leia(filmes[i].classificacaoIndicativaFilme)
          escreva("Ano de lançamento: ")
          leia(filmes[i].anoLancamentoFilme)
+         escreval("---------------------------")
       fimse
-      escreval("---------------------------")
    fimpara
 fimprocedimento
 
@@ -114,8 +114,8 @@ inicio
          filmes[i].classificacaoIndicativaFilme <- 0
          escreva("Ano de lançamento: ")
          filmes[i].anoLancamentoFilme <- 0
+         escreval("---------------------------")
       fimse
-      escreval("---------------------------")
    fimpara
 fimprocedimento
 
@@ -125,5 +125,6 @@ Inicio
    listarFilme
    editarFilme
    excluirFilme
-   
+   visualizarFilmes
+
 Fimalgoritmo
