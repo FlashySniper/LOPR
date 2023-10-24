@@ -35,15 +35,17 @@ inicio
    escreval("Visualizar Filmes: ")
    escreval("---------------------------")
    para i de 0 ate 2 faca
-      escreva("Nome: ")
-      escreval(filmes[i].nomeFilme)
-      escreva("Gênero: ")
-      escreval(filmes[i].generoFilme)
-      escreva("Classificação indicativa: ")
-      escreval(filmes[i].classificacaoIndicativaFilme)
-      escreva("Ano de lançamento: ")
-      escreval(filmes[i].anoLancamentoFilme)
-      escreval("---------------------------")
+      se filmes[i].nomeFilme <> "" entao
+         escreva("Nome: ")
+         escreval(filmes[i].nomeFilme)
+         escreva("Gênero: ")
+         escreval(filmes[i].generoFilme)
+         escreva("Classificação indicativa: ")
+         escreval(filmes[i].classificacaoIndicativaFilme)
+         escreva("Ano de lançamento: ")
+         escreval(filmes[i].anoLancamentoFilme)
+         escreval("---------------------------")
+      fimse
    fimpara
 fimprocedimento
 
