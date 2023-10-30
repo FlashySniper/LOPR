@@ -39,6 +39,7 @@ inicio
       escreva("Digite FIM para interromper a adição de músicas. ")
       escreval("Se deseja continuar digite ENTER.")
       leia(fim)
+      escreval
       se fim = "FIM" entao
          interrompa
       fimse
@@ -72,7 +73,9 @@ fimprocedimento
 
 procedimento mostrarMusicas()
 var
-   para i de 1 ate 100 faca
+   continuar: caractere
+inicio
+   para i de 0 ate 100 faca
       se (playlist[i].nomeMusica <> "") ou (playlist[i].generoMusica <> "") ou (playlist[i].cantorMusica <> "") entao
          escreval("---------------------")
          escreva("Nome: ")
@@ -83,6 +86,7 @@ var
          escreval(playlist[i].cantorMusica)
       fimse
    fimpara
+   leia(continuar)
 fimprocedimento
 
 Inicio
@@ -101,12 +105,7 @@ Inicio
          inserirMusicas()
       caso 2
          mostrarMusicas()
-      outrocaso
-         escreval("Opção inválida. Tente novamente")
       fimescolha
-      //se (opcao > 3) e (opcao < 1) entao
-      //escreval("Opção inválida. Tente novamente")
-      //fimse
       limpatela
    ate opcao = 3
 
