@@ -5,6 +5,9 @@ Algoritmo "quiz"
 //um quiz.
 // Autor(a)    : Gabriel Lucas Soares
 // Data atual  : 06/11/2023
+Const
+   NOME_ADMIN = "Ademiro"
+   SENHA_ADMIN = "admin123"
 
 Tipo
    // Seção de Declaração de registros
@@ -14,17 +17,14 @@ Tipo
    fimregistro
 
    pergunta=registro
-      enunciadoPergunta: caractere
-      respostaPergunta: caractere
+      aPergunta: caractere
+      aResposta: caractere
    fimregistro
-
-Const
-   nomeAdmin: <- "Ademiro"
-   senhaAdmin <- "admin123"
 
 Var
    // Seção de Declarações das variáveis
    jogadores: vetor[0..24] de jogador
+   perguntas: vetor[0..49] de pergunta
 
 procedimento telaInicio()
 var
@@ -53,7 +53,7 @@ procedimento inicioJogador()
 var
    i: inteiro
    opcao: inteiro
-   nickname : caractere
+   nickname: caractere
 inicio
    opcao <- 0
    enquanto (opcao < 1) e (opcao > 3) faca
@@ -76,7 +76,7 @@ inicio
                escreval("Bem-vindo de volta", nickname)
                escreval("Pontuação: ", jogadores[i].pontuacaoJogador)
                escreval("Estamos trabalhando em mais quizes volte em breve!")
-               interrompa
+               telaInicio()
             fimse
          fimpara
       caso 3
@@ -87,26 +87,64 @@ inicio
    fimenquanto
 fimprocedimento
 
+procedimento inserirPerguntas()
+var
+   i: inteiro
+   numPerguntas: inteiro
+inicio
+   escreval("-----Inserir perguntas-----")
+   escreval
+   escreva("Digite o número de perguntas que serão adicionadas: ")
+   leia(numPerguntas)
+   para i de i ate numPerguntas faca
+      escreval("Digite a pergunta: ")
+      leia(perguntas[i].aPergunta)
+      escreval("Digite a resposta: ")
+      leia(perguntas[i].aResposta)
+   fimpara
+   telaPerguntas()
+fimprocedimento
+
+procedimento telaPerguntas()
+var
+   i: inteiro
+   opcao: inteiro
+inicio
+   escreval("-----Bem-vindo Administrador-----")
+   escreval
+   opcao <- 0
+   enquanto (opcao < 1) e (opcao > 2) faca
+      escreval("[1] - Inserir perguntas")
+      escreval("[2] - Sair")
+      leia(opcao)
+      escolha opcao
+      caso 1
+         inserirPerguntas()
+      caso 2
+         telaInicio()
+      outrocaso
+         escreva("Opção inválida.")
+      fimescolha
+   fimenquanto
+fimprocedimento
+
 procedimento validarAdmin()
 var
    i: inteiro
    admin, senha : caractere
 inicio
    escreval("---------------------")
-   repita
-      escreva("Nome do admin: ")
-      leia(admin)
-      escreva("Senha: ")
-      leia(senha)
-      se (senha = senhaAdmin) e (admin = nomeAdmin) entao
-         interrompa
-      fimse
-      i <- i + 1
-   ate i = 2
-   se i = 2 entao
-      escreval("Volte em breve, você não é o admin.")
+   escreva("Nome do admin: ")
+   leia(admin)
+   escreva("Senha: ")
+   leia(senha)
+   se (senha = SENHA_ADMIN) e (admin = NOME_ADMIN) entao
+      telaPerguntas()
+   senao
+      escreva("Você não é o Admin, volte em breve!")
       telaInicio()
    fimse
+
 fimprocedimento
 
 Inicio
