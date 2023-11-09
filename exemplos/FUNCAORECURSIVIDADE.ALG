@@ -2,6 +2,9 @@ Algoritmo "funcaoRecursividade"
 
 Var
 // Seção de Declarações das variáveis 
+
+n: real
+
 funcao somaFracoes(n:real):real
 var
 inicio
@@ -15,6 +18,8 @@ fimfuncao
 
 Inicio
 // Seção de Comandos, procedimento, funções, operadores, etc... 
-escreva(somaFracoes(5))
+escreva("Digite o número de execuções: ")
+leia(n)
+escreva(somaFracoes(n))
 
 Fimalgoritmo
